@@ -1,7 +1,9 @@
 const express = require("express");
 const mongoose = require("mongoose");
 require("dotenv").config();
+const jwt = require("jsonwebtoken");
 const Theme = require("./models/theme.js");
+const userRoutes = require("./routes/users.js");
 
 // Create express server
 const app = express();
@@ -15,6 +17,9 @@ mongoose
   .then(() => console.log("Connected to MongoDB..."))
   .catch((err) => console.error("Could not connect to MongoDB ", err));
 
+//Views
+app.set("view-engine", "ejs");
+
 // Middleware
 app.use(express.static("public"));
 app.use(express.json());
@@ -23,8 +28,10 @@ app.use(express.json());
 app.get("/", async (req, res) => {
   //res.send("Welcome to Lego Marketplace");
   const themes = await Theme.find({});
-  res.json(themes);
+  res.sendFile(path.join(__dirname, "./public/index.html"));
 });
+
+app.use("/api/user", userRoutes);
 
 // Listen
 app.listen(PORT, () => {
