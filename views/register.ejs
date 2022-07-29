@@ -1,64 +1,285 @@
-<h1>Register</h1>
-<form action="/user/register" method="POST">
-    <div>
-        <label for="firstName">First Name</label>
-        <input type="text" id="firstName" name="firstName" required>
-    </div>
-    <div>
-        <label for="lastName">Last Name</label>
-        <input type="text" id="lastName" name="lastName" required>
-    </div>
-    <div>
-        <label for="emai">Email</label>
-        <input type="email" id="email" name="email" required>
-    </div>
-    <div>
-        <label for="password">Password</label>
-        <input type="password" id="password" name="password" requred>
-    </div>
-    <p>Billing Address</p>
-    <div>
-        <label for="billingStreet1">Street 1</label>
-        <input type="text" id="billingStreet1" name="billingAddress.street1">
-    </div>
-    <div>
-        <label for="billingStreet2">Street 2</label>
-        <input type="text" id="billingStreet2" name="billingAddress.street2">
-    </div>
-    <div>
-        <label for="billingCity">City</label>
-        <input type="text" id="billingCity" name="billingAddress.city">
-    </div>
-    <div>
-        <label for="billingState">State</label>
-        <input type="text" id="billingState" name="billingAddress.state">
-    </div>
-    <div>
-        <label for="billingZipcode">Zipcode</label>
-        <input type="text" id="billingZipcode" name="billingAddress.zipcode">
-    </div>
-    <p>Shipping Address</p>
-    <div>
-        <label for="shippingStreet1">Street 1</label>
-        <input type="text" id="shippingStreet1" name="shippingAddress.street1">
-    </div>
-    <div>
-        <label for="shippingStreet2">Street 2</label>
-        <input type="text" id="shippingStreet2" name="shippingAddress.street2">
-    </div>
-    <div>
-        <label for="shippingCity">City</label>
-        <input type="text" id="shippingCity" name="shippingAddress.city">
-    </div>
-    <div>
-        <label for="shippingState">State</label>
-        <input type="text" id="shippingState" name="shippingAddress.state">
-    </div>
-    <div>
-        <label for="shippingZipcode">Zipcode</label>
-        <input type="text" id="shippingZipcode" name="shippingAddress.zipcode">
-    </div>
-    <button type="submit">Register</button>
-</form>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<a href="/user/login">Login</a>
+    <!-- Font Awesome Icons CDN -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+      integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay"
+      crossorigin="anonymous"
+    />
+    <!-- Bootstrap Icons CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
+    />
+    <!-- Bootstrap CDN -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <!-- Style.css -->
+    <link rel="stylesheet" href="/css/styles.css" />
+    <title>Brick Flip - Register</title>
+  </head>
+
+  <body>
+    <div class="d-flex justify-content-center mb-3">
+      <h1 id="register-title" class="text-primary fw-bold">Register</h1>
+    </div>
+
+    <!-- REGISTER PAGE -->
+    <section class="h-100">
+      <div class="container py-0 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+          <div class="col">
+            <div class="card card-registration my-4">
+              <div class="row g-0">
+                <div class="col-xl-10">
+                  <div class="card-body p-md-20 text-black">
+                    <form action="/user/register" method="POST">
+<!-- EMAIL AND PASSWORD DIV -->
+                        <div class="row">  
+                            <div class="col-md-6 mb-4">
+<!-- ENTER EMAIL -->
+                            <div class="form-outline">  
+                                <input
+                                type="email"
+                                id="email"
+                                class="form-control form-control-lg"
+                                name="email" required
+                              />
+                            <label class="form-label" for="email">
+                                Email
+                            </label>
+                            </div>
+                          </div>
+<!-- PASSWORD -->
+                          <div class="col-md-6 mb-4">
+                            <div class="form-outline">
+                            <input
+                                type="password"
+                                id="password"
+                                class="form-control form-control-lg"
+                                name="password" required
+                            />
+                            <label class="form-label" for="password">
+                                Password
+                            </label>
+                            </div>
+                          </div>
+                        </div>                          
+<!-- FIRST AND LAST NAME DIV -->
+                        <div class="row">  
+                        <div class="col-md-6 mb-4">
+<!-- ENTER FIRST NAME -->
+                        <div class="form-outline">  
+                            <input
+                            type="text"
+                            id="firstName"
+                            class="form-control form-control-lg"
+                            name="firstName" required
+                          />
+                        <label class="form-label" for="firstName">
+                            First Name
+                        </label>
+                        </div>
+                      </div>
+<!-- LAST NAME -->
+                      <div class="col-md-6 mb-4">
+                        <div class="form-outline">
+                          
+                        <input
+                            type="text"
+                            id="lastName"
+                            class="form-control form-control-lg"
+                            name="lastName" required
+                        />
+                        <label class="form-label" for="lastName">
+                            Last Name
+                        </label>
+                        </div>
+                      </div>
+                    </div>
+                    <p class="my-3 fw-bold">Billing Address</p>
+<!-- BILLING ADDRESS 1 & 2-->
+                    <div class="form-outline mb-4">
+                      <input
+                        type="text"
+                        id="billingStreet1"
+                        class="form-control form-control-lg"
+                        name="billingAddress.street1"
+                      />
+                      <label class="form-label" for="billingStreet1"
+                        >Address 1</label
+                      >
+                      <input
+                        type="text"
+                        id="billingStreet2"
+                        class="form-control form-control-lg"
+                        name="billingAddress.street2"
+                      />
+                      <label class="form-label" for="billingStreet2"
+                        >Address 2</label
+                      >
+                    </div>
+<!-- BILLING STATE CITY ZIPCODE DIV -->
+                    <div class="row">  
+                        <div class="col-md-6 mb-4">
+<!-- BILLING CITY -->
+                        <div class="form-outline">  
+                            <input
+                            type="text"
+                            id="billingCity"
+                            class="form-control form-control-lg"
+                            name="billingAddress.city" required
+                          />
+                        <label class="form-label" for="billingCity">
+                            City
+                        </label>
+                        </div>
+                      </div>
+<!-- BILLING STATE -->
+                      <div class="col-md-6 mb-4">
+                        <div class="form-outline">                          
+                        <input
+                            type="text"
+                            id="billingState"
+                            class="form-control form-control-lg"
+                            name="billingAddress.state" required
+                        />
+                        <label class="form-label" for="billingState">
+                            State
+                        </label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-outline mb-4 col-md-6">
+                        <input
+                          type="text"
+                          id="billingZipcode"
+                          class="form-control form-control-lg"
+                          name="billingAddress.zipcode"
+                        />
+                        <label class="form-label" for="billingZipcode"
+                          >Zipcode</label
+                        >
+                      </div>         
+<!-- END OF BILLING STATE CITY ZIPCODE DIV -->
+
+                    <p class="my-3 fw-bold">Shipping Address</p>
+<!-- SHIPPING ADDRESS 1 & 2-->
+                    <div class="form-outline mb-4">
+                        <input
+                          type="text"
+                          id="shippingStreet1"
+                          class="form-control form-control-lg"
+                          name="shippingAddress.street1"
+                        />
+                        <label class="form-label" for="shippingStreet1"
+                          >Address 1</label
+                        >
+                        <input
+                          type="text"
+                          id="shippingStreet2"
+                          class="form-control form-control-lg"
+                          name="shippingAddress.street2"
+                        />
+                        <label class="form-label" for="shippingStreet2"
+                          >Address 2</label
+                        >
+                      </div>
+                    <!-- SHIPPING STATE AND CITY DIV -->
+                    <div class="row">  
+                        <div class="col-md-6 mb-4">
+                        <!-- CITY -->
+                        <div class="form-outline">  
+                            <input
+                            type="text"
+                            id="shippingCity"
+                            class="form-control form-control-lg"
+                            name="shippingAddress.city" required
+                          />
+                        <label class="form-label" for="shippingCity">
+                            City
+                        </label>
+                        </div>
+                      </div>
+                      <!-- SHIPPING STATE -->
+                      <div class="col-md-6 mb-4">
+                        <div class="form-outline">                          
+                        <input
+                            type="text"
+                            id="shippingState"
+                            class="form-control form-control-lg"
+                            name="shippingAddress.state" required
+                        />
+                        <label class="form-label" for="shippingState">
+                            State
+                        </label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-outline mb-4 col-md-6">
+                        <input
+                          type="text"
+                          id="shippingZipcode"
+                          class="form-control form-control-lg"
+                          name="shippingAddress.zipcode"
+                        />
+                        <label class="form-label" for="shippingZipcode"
+                          >Zipcode</label
+                        >
+                      </div>         
+                    <!-- #############END OF SHIPPING STATE CITY ZIPCODE DIV -->
+
+
+                    <div class="d-flex justify-content-end pt-3">
+                      
+                    <button type="button" class="btn btn-light btn-lg">
+                            <a href="/user/login">Login</a>
+                        </button>
+
+                      <button type="submit" class="btn btn-warning btn-lg ms-2">
+                        Register
+                      </button>
+                    </form>
+    
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Copyright -->
+    <footer class="p-5 bg-primary text-white text-center position-relative">
+      <div class="container">
+        <p class="lead">Copyright &copy; 2022 Brick Flip</p>
+        <a href="#" class="position-absolute bottom-0 end-0 p-5">
+          <i class="bi bi-arrow-up-circle h1"></i>
+        </a>
+      </div>
+    </footer>
+    <!-- Copyright -->
+
+    <!-- main js -->
+    <script src="/index.js"></script>
+
+    <!-- Bootstrap JS CDN -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
