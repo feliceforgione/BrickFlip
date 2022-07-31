@@ -2,6 +2,7 @@ const express = require("express");
 require("dotenv").config();
 const passport = require("passport");
 const userRoutes = require("./routes/users.js");
+const themeRoutes = require("./routes/themes.js");
 
 // Create express server
 const app = express();
@@ -23,10 +24,11 @@ app.get("/", async (req, res) => {
   console.log("session", req.session);
   //console.log("sessionID", req.sessionID);
   //console.log("req.user", req.user);
-  res.render("index.ejs", { title: "Login" });
+  res.render("index.ejs", { name: req.user.firstName });
 });
 
 app.use("/user", userRoutes);
+app.use("/themes", themeRoutes);
 
 // Listen
 app.listen(PORT, () => {
