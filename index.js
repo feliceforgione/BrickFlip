@@ -20,11 +20,10 @@ require("./startup/passport-config")(passport);
 // Routes
 app.get("/", async (req, res) => {
   //res.send("Welcome to Lego Marketplace");
-  //const themes = await Theme.find({});
   console.log("session", req.session);
   //console.log("sessionID", req.sessionID);
   //console.log("req.user", req.user);
-  res.render("index.ejs", { name: req.user.firstName });
+  res.render("index.ejs", {});
 });
 
 app.use("/user", userRoutes);
